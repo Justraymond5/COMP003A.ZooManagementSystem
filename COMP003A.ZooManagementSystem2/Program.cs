@@ -52,7 +52,9 @@ class Program
                     Console.WriteLine("\nAnimals in the zoo:");
                     foreach (var animal in animals)
                     {
+                        
                         Console.WriteLine($"{animal.Name} ({animal.Species})");
+                        animal.MakeSound();
                     }
                     
                 }
@@ -60,26 +62,21 @@ class Program
                 {
                     Console.Write("Name of the animal you want to describe: ");
                     string Update = Console.ReadLine();
-
-                    Animal UpdatedAnimal = null;
-                    foreach (Animal animal in animals)
-                    {
-                        if (animal.Name.Equals(Update, StringComparison.OrdinalIgnoreCase))
-                        {
-                            break;
-                        }
-                    }
+                    Animal UpdatedAnimal = animals.Find(a => a.Name.Equals(Update, StringComparison.OrdinalIgnoreCase));
 
                     if (UpdatedAnimal != null)
                     {
-                        
-
+                        ZooUtility.DescribeAnimal(UpdatedAnimal.Name);
+                        ZooUtility.DescribeAnimal(UpdatedAnimal.Name, UpdatedAnimal.Species);
+                        /*ZooUtility.DescribeAnimal(UpdatedAnimal.Name, UpdatedAnimal.Species, UpdatedAnimal.Age) ;*/
+                        //Could't figure out how to add age
                         
                     }
                     else
                     {
                         Console.WriteLine("Animal not found.");
                     }
+                    break;
                 }
 
                 else if (choice == 5)

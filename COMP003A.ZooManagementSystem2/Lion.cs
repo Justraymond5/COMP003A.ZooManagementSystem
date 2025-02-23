@@ -6,9 +6,11 @@ class Lion : Animal
 {
     public Lion( string name, string species) : base(name, species)
     {
-        Name = name;
-        Species = species;
+       
     }
+    /// <summary>
+    /// Prints the sound of lion
+    /// </summary>
     public override void MakeSound()
     {
         Console.WriteLine($"The lion roars! ({Name}, {Species})");

@@ -1,10 +1,18 @@
 namespace COMP003A.ZooManagementSystem2;
 
-internal abstract class Animal
+/// <summary>
+/// Abstract class
+/// </summary>
+ abstract class Animal
 {
     private string _name;
     private string _species;
     
+    
+    /// <summary>
+    ///  Gets and sets the name of the animal
+    /// </summary>
+    /// <exception cref="ArgumentException">Cant be empty</exception>
     public string Name
     {
         get
@@ -22,7 +30,10 @@ internal abstract class Animal
             
         }
     }
-
+/// <summary>
+///  Gets and sets the species of the animal
+/// </summary>
+/// <exception cref="ArgumentException">Cant be empty</exception>
     public string Species
     {
         get
